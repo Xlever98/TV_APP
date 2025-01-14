@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings Sidebar</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .img {
+        display: flex;
+
+        justify-content: space-between;
+        background-image: url("sky.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top;
+        flex: 1;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+      }
+
+      .footer {
+        background-image: url("grass.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        flex: 0.2;
+        width: 100%;
+        z-index: 2;
+        position: relative;
+        margin-top: -10px; /* Adjust overlap */
+      }
+      .img-css {
+        padding: 1rem 1rem;
+
+        width: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img">
+      <div>
+        <img class="img-css" src="iconone.svg" alt="icon" />
+      </div>
+      <div>
+        <img class="img-css" src="Layer_x0020_1.svg" alt="icon" />
+        <img class="img-css" src="_1910503532400.svg" alt="icon" />
+        <img class="img-css" src="Layer_x0020_1 (1).svg" alt="icon" />
+        <img class="img-css" src="Layer_x0020_1 (2).svg" alt="icon" />
+      </div>
+      <div>
+        <img class="img-css" src="Group 1000008250.svg" alt="icon" />
+      </div>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>
