@@ -32,6 +32,8 @@
       }
 
       .container {
+      height: 100%;
+      overflow: hidden;
         max-width: 1400px;
         margin: auto;
 
@@ -121,6 +123,7 @@
       .middle-section {
         display: flex;
         justify-content: center;
+        overflow: scroll;
         /* align-items: center; */
       }
 
@@ -224,7 +227,9 @@
         transform: scale(1.05); /* Enlarge slightly on hover */
         transition: transform 0.3s ease-in-out;
       }
-
+.qr-section{
+  overflow: auto;
+}
       .qr-section img {
         width: 100%;
 
@@ -333,6 +338,7 @@
               border-radius: 15px;
               padding: 10px;
               margin-bottom: 1rem;
+              overflow: auto;
             "
           >
             <img src="yekbun-logo.svg" alt="Yekbûn Logo" class="logo" />
@@ -454,6 +460,38 @@
               <div class="image-large">
                 <img src="7.svg" alt="Image 5" />
               </div>
+              
+            </div>
+           
+            <!-- Second row with 3 images -->
+            <div class="row-2">
+              <!-- First image taking 55% width -->
+              <div class="image-large">
+                <img src="3.svg" alt="Image 5" />
+              </div>
+              <!-- Section for two stacked images taking 45% width -->
+              <div class="image-stack">
+                <img src="8.svg" alt="Image 3" />
+                <img src="girl1.svg" alt="Image 4" />
+              </div>
+            </div>
+
+            <!-- Third row -->
+            <div class="row-3">
+              <!-- First image taking 55% width -->
+              <div class="image-large">
+                <img src="6.svg" alt="Image 5" />
+              </div>
+              <!-- Section for two stacked images, taking 45% width -->
+              <div class="image-stack-3">
+                <img src="9.svg" alt="Image 3" />
+                <img src="10.svg" alt="Image 4" />
+              </div>
+              <!-- Last image taking 55% width -->
+              <div class="image-large">
+                <img src="7.svg" alt="Image 5" />
+              </div>
+              
             </div>
           </div>
         </div>
