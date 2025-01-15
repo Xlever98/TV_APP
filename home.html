@@ -17,6 +17,12 @@
     />
     <title>Yekbûn Login</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Genos;
+      }
       body {
         font-family: Genos;
         background-color: #f4f4f4;
@@ -78,14 +84,14 @@
       }
 
       .login-form .btn {
-        width: 100%;
-        padding: 10px;
+        width: 80%;
+        padding: 5px;
         background-color: #e53935;
         color: white;
-        font-size: 16px;
+        /* font-size: 16px;
         border: none;
         border-radius: 5px;
-        transition: background-color 0.3s ease, transform 0.2s ease;
+        transition: background-color 0.3s ease, transform 0.2s ease; */
       }
 
       .login-form .btn:hover {
@@ -97,7 +103,7 @@
         height: 100%;
       }
 
-      .middle-section img {
+      /* .middle-section img {
         width: 100%;
         height: 190px;
         object-fit: cover;
@@ -110,6 +116,113 @@
       .middle-section img:hover {
         transform: scale(1.1) rotateY(10deg);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      } */
+
+      .middle-section {
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+      }
+
+      .image-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px; /* Add spacing between rows */
+      }
+
+      .row-1 {
+        display: flex;
+        justify-content: center;
+        gap: 10px; /* Add spacing between images in each row */
+      }
+
+      .row-1 img {
+        width: calc(50% - 5px); /* Two images share the first row equally */
+        height: auto;
+        border-radius: 8px; /* Optional styling */
+        object-fit: cover;
+      }
+
+      img:hover {
+        transform: scale(1.05); /* Hover effect */
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Styling for row-2 container */
+      .row-2 {
+        display: flex;
+        gap: 10px; /* Add space between the large image and stacked images */
+      }
+
+      /* Styling for the large image taking 55% of the width */
+      .image-large {
+        width: 55%;
+      }
+
+      .image-large img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      /* Styling for the stacked images taking 45% of the width */
+      .image-stack {
+        width: 45%;
+        display: flex;
+        /* flex-direction: column; Stack images vertically */
+        gap: 10px; /* Add space between stacked images */
+      }
+
+      .image-stack img {
+        width: 48%;
+        /* height: auto; */
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      /* Styling for row-3 container */
+      .row-3 {
+        display: flex;
+        gap: 10px; /* Add space between the large images and the stacked images */
+      }
+
+      /* Styling for the large images (same as row-2) */
+      .image-large {
+        width: 55%;
+      }
+
+      .image-large img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      /* Styling for the stacked images in the middle (taking 45% of the width) */
+      .image-stack-3 {
+        /* width: 45%; */
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+        row-gap: 5px;
+        column-gap: auto;
+        justify-content: center; /* Center images vertically */
+        /* height: 10%; Take full height */
+      }
+
+      /* Ensure the images inside the stacked section are also responsive and centered */
+      .image-stack-3 img {
+        width: 85%;
+        margin: auto;
+        height: auto;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+
+      /* Optional hover effect */
+      img:hover {
+        transform: scale(1.05); /* Enlarge slightly on hover */
+        transition: transform 0.3s ease-in-out;
       }
 
       .qr-section img {
@@ -171,6 +284,42 @@
       .modal-backdrop {
         background-color: rgba(0, 0, 0, 0.7);
       }
+      .welcomeback {
+        font-family: Genos;
+        font-size: 36px;
+        font-weight: 600;
+        /* line-height: 43.2px; */
+        letter-spacing: 0.02em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        padding: 0px !important;
+        margin: 0px !important;
+      }
+      .welcomeback-desc {
+        font-family: Genos;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #00000066;
+        padding: 0px !important;
+        margin: 0px !important;
+      }
+
+      .enterclass {
+        font-family: Genos;
+        font-size: 34px;
+        font-weight: 600;
+        line-height: 40.8px;
+        letter-spacing: 0.02em;
+        text-align: center;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
     </style>
   </head>
   <body>
@@ -186,10 +335,12 @@
               margin-bottom: 1rem;
             "
           >
-            <img src="bun.svg" alt="Yekbûn Logo" class="logo" />
+            <img src="yekbun-logo.svg" alt="Yekbûn Logo" class="logo" />
             <div class="login-form">
-              <h2>Welcome back</h2>
-              <p>Please login with your YekBûn credentials</p>
+              <h2 class="welcomeback">Welcome back</h2>
+              <p class="welcomeback-desc">
+                Please login with your YekBûn credentials
+              </p>
               <input
                 type="email"
                 class="form-control"
@@ -201,7 +352,7 @@
                 placeholder="Type your password"
               />
               <button
-                class="btn mt-3"
+                class="btn mt-3 enterclass"
                 data-bs-toggle="modal"
                 data-bs-target="#infoModal"
               >
@@ -239,7 +390,7 @@
         </div>
 
         <!-- Middle Section -->
-        <div class="col-md-6 p-4 middle-section">
+        <!-- <div class="col-md-6 p-4 middle-section">
           <div class="row g-3">
             <div class="col-6">
               <img src="3.svg" alt="Image 1" />
@@ -264,6 +415,45 @@
             </div>
             <div class="col-6">
               <img src="8.svg" alt="Image 6" />
+            </div>
+          </div>
+        </div> -->
+
+        <div class="col-md-6 p-4 middle-section">
+          <div class="row g-0 image-grid">
+            <!-- First row with 2 images -->
+            <div class="row-1">
+              <img src="4.svg" alt="Image 1" />
+              <img src="5.svg" alt="Image 2" />
+            </div>
+            <!-- Second row with 3 images -->
+            <div class="row-2">
+              <!-- First image taking 55% width -->
+              <div class="image-large">
+                <img src="3.svg" alt="Image 5" />
+              </div>
+              <!-- Section for two stacked images taking 45% width -->
+              <div class="image-stack">
+                <img src="8.svg" alt="Image 3" />
+                <img src="girl1.svg" alt="Image 4" />
+              </div>
+            </div>
+
+            <!-- Third row -->
+            <div class="row-3">
+              <!-- First image taking 55% width -->
+              <div class="image-large">
+                <img src="6.svg" alt="Image 5" />
+              </div>
+              <!-- Section for two stacked images, taking 45% width -->
+              <div class="image-stack-3">
+                <img src="9.svg" alt="Image 3" />
+                <img src="10.svg" alt="Image 4" />
+              </div>
+              <!-- Last image taking 55% width -->
+              <div class="image-large">
+                <img src="7.svg" alt="Image 5" />
+              </div>
             </div>
           </div>
         </div>
@@ -303,7 +493,13 @@
                 border: 1px solid #ddd;
               "
             >
-              <img width="auto" height="50px" src="resetPassword.svg" alt="Yekbûn Logo" class="logo" />
+              <img
+                width="auto"
+                height="50px"
+                src="resetPassword.svg"
+                alt="Yekbûn Logo"
+                class="logo"
+              />
               <p style="font-weight: bold; margin: 0">Information</p>
               <p style="color: #888ea0; margin: 0">
                 We've sent a request to your device. Please confirm to activate
