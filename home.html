@@ -325,6 +325,9 @@
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
       }
+      .form-control{
+        margin: 0 !important;
+      }
     </style>
   </head>
   <body>
@@ -347,15 +350,18 @@
               <p class="welcomeback-desc">
                 Please login with your YekBûn credentials
               </p>
+              <label style="width: 100%; text-align: left;color: #00000066;" for="fname">Your Email</label>
               <input
                 type="email"
                 class="form-control"
                 placeholder="Enter your email"
               />
+              <label style="width: 100%; text-align: left;color: #00000066;" for="fname">Your Password</label>
               <input
                 type="password"
                 class="form-control"
                 placeholder="Type your password"
+                
               />
               <button
                 class="btn mt-3 enterclass"
@@ -467,7 +473,10 @@
             <div class="row-2">
               <!-- First image taking 55% width -->
               <div class="image-large">
-                <img src="3.svg" alt="Image 5" />
+                <a href="/sky.html">
+                  <img src="3.svg" alt="Image 5" />
+                </a>
+               
               </div>
               <!-- Section for two stacked images taking 45% width -->
               <div class="image-stack">
