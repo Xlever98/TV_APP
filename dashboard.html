@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Genos"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <title>YEKBÛN TV</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Genos;
+      }
+
+      body {
+        background-image: url("Graphic_Element.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        font-family: Genos;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Black overlay with 80% opacity */
+        z-index: 1; /* Ensure it appears above the background but below content */
+      }
+
+      body * {
+        position: relative;
+        z-index: 2; /* Ensures content appears above the overlay */
+      }
+
+      .background-pattern {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .corner {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: rgba(144, 238, 144, 0.1);
+      }
+
+      .top-left {
+        top: -150px;
+        left: -150px;
+        transform: rotate(45deg);
+      }
+
+      .top-right {
+        top: -150px;
+        right: -150px;
+        transform: rotate(45deg);
+      }
+
+      .bottom-left {
+        bottom: -150px;
+        left: -150px;
+        transform: rotate(45deg);
+      }
+
+      .bottom-right {
+        bottom: -150px;
+        right: -150px;
+        transform: rotate(45deg);
+      }
+
+      .logo-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex: 1; /* Ensure this section takes all remaining space */
+        padding: 2rem;
+      }
+
+      .progress-container {
+        width: 200px;
+        height: 4px;
+        background-color: #f1f1f1;
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+        margin-top: 20px;
+      }
+
+      .progress-bar {
+        position: absolute;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #ff4d4d;
+        border-radius: 2px;
+        animation: loading 2s ease-in-out infinite;
+      }
+
+      @keyframes loading {
+        0% {
+          left: -100%;
+          width: 100%;
+        }
+        50% {
+          left: 0;
+          width: 100%;
+        }
+        100% {
+          left: 100%;
+          width: 100%;
+        }
+      }
+
+      /* Centered copyright text below the footer image */
+      .footer-content {
+        text-align: center;
+        font-size: 14px;
+      }
+
+      /* Footer bottom-right text */
+      .footer-right {
+        position: fixed;
+        right: 25px;
+        bottom: 1px;
+        font-size: 14px;
+      }
+
+      .bottom-image {
+        max-width: 90%;
+        width: 2.25rem;
+        height: auto;
+        margin-top: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @media (max-width: 768px) {
+        .logo {
+          max-width: 100px;
+          height: 127px;
+        }
+
+        .bottom-image {
+          width: 250px;
+        }
+
+        .footer-right {
+          font-size: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .logo {
+          max-width: 150px;
+        }
+
+        .bottom-image {
+          width: 200px;
+        }
+
+        .footer-right {
+          font-size: 9px;
+        }
+      }
+
+      .left-section,
+      .right-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 20px;
+      }
+
+      .logo {
+        background-color: #f2f2f2;
+        border-radius: 3%;
+        /* padding: 24px; */
+        display: block;
+        /* margin: 0 auto 20px; */
+        width: 100%;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+
+      .login-form {
+        width: 100%;
+        /* border-radius: 15px; */
+        /* margin-bottom: 12px; */
+        text-align: center;
+        /* background: #fff; */
+        padding: 5px;
+      }
+
+      .login-form h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+
+      .login-form input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px;
+      }
+
+      .login-form .btn {
+        width: 100%;
+        padding: 0px;
+        background-color: #e53935;
+        color: white;
+        /* font-size: 16px; */
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        font-size: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 31px;
+      }
+
+      .login-form .btn:hover {
+        background-color: #c62828;
+        transform: scale(1.05);
+      }
+
+      .middle {
+        height: 100%;
+      }
+
+      .middle-section img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        animation: zoomIn 1s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .middle-section img:hover {
+        transform: scale(1.1) rotateY(10deg);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .qr-section img {
+        width: 100%;
+
+        margin-bottom: 10px;
+        animation: flipIn 1.5s ease-in-out;
+      }
+
+      .qr-section img:hover {
+        transform: rotateY(360deg);
+        transition: transform 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes zoomIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes flipIn {
+        from {
+          transform: rotateY(180deg);
+          opacity: 0;
+        }
+        to {
+          transform: rotateY(0deg);
+          opacity: 1;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .container {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .middle-section img {
+          height: 150px;
+        }
+      }
+
+      .modal-backdrop {
+        background-color: rgba(0, 0, 0, 0.7);
+      }
+
+      /* Container for Modals */
+      .modal-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        gap: 2rem; /* Add spacing between the modals */
+        position: relative;
+      }
+
+      .flexbox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto 0px;
+        
+      }
+      /* Custom Modal Styling */
+      .custom-modal {
+        position: relative;
+        display: block; /* Override Bootstrap's inline behavior */
+        max-width: 300px; /* Set a consistent width for the modals */
+      }
+
+      .modal-backdrop {
+        display: none; /* Disable Bootstrap's default backdrop */
+      }
+
+      .model-img-1{
+        /* width: 120px; */
+        /* background-color: #ff4d4d; */
+        background-color: #f2f2f2;
+        border-radius: 3%;
+        /* padding: 24px; */
+        display: block;
+        /* margin: 0 auto 20px; */
+        width: 100%;
+        animation: fadeIn 1.5s ease-in-out;
+        height: 154px;
+      
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Logo and Progress Bar Section (Centered) -->
+    <!-- <div class="logo-container"></div> -->
+    <!-- <button class="btn mt-3" data-bs-toggle="modal" data-bs-target="#infoModal">
+      Enter
+    </button>
+
+    <button
+      class="btn mt-3"
+      data-bs-toggle="modal"
+      data-bs-target="#infoModal2"
+    >
+      Enter
+    </button> -->
+    <div class="flexbox">
+      <div
+        class="modal fade show custom-modal"
+        id="infoModal"
+        tabindex="-1"
+        aria-labelledby="infoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" style="width: 313px">
+          <div class="modal-content" style="max-width: 200px">
+            <div class="modal-body">
+              <img class="model-img-1" src="modal-logo1.svg" alt="Yekbûn Logo" />
+              <div style="text-align: center">
+                <p style="font-weight: bold; margin: 0">YekBûnTV</p>
+                <p style="color: #888ea0; margin: 0">Je bu Mezena</p>
+                <div class="login-form">
+                  <button class="btn">Enter</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Modal -->
+      <div
+        class="modal fade show custom-modal"
+        id="infoModal2"
+        tabindex="-1"
+        aria-labelledby="infoModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" style="width: 313px">
+          <div class="modal-content" style="max-width: 200px">
+            <div class="modal-body">
+              <img src="modal-logo2.svg" alt="Yekbûn Logo" class="logo" />
+              <div style="text-align: center">
+                <p style="font-weight: bold; margin: 0">Zarok</p>
+                <p style="color: #888ea0; margin: 0">Je bu Zaroka</p>
+                <div class="login-form">
+                  <button style="background-color: green;" class="btn">Enter</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Footer Image -->
+    <img src="Logo Design 1.svg" alt="Bottom Image" class="bottom-image" />
+
+    <!-- Copyright Section below the Footer Image -->
+    <div style="margin-bottom: 1rem" class="footer-content">
+      <p style="margin: 0; color: #fff">Copyright Connect.ltd</p>
+    </div>
+
+    <!-- YekTV Version Text (Bottom-right) -->
+    <div style="margin-bottom: 1rem" class="footer-right">
+      <p style="margin: 0; color: #fff">YekTV Ver. 2.0</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

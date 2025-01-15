@@ -1,186 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Navbar</title>
-  <style>
-    /* General Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Genos"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar</title>
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Genos;
+      }
 
-    body {
-      font-family: Arial, sans-serif;
-    }
+      body {
+        /* font-family: Arial, sans-serif; */
+        font-family: Genos;
+        
+      }
 
-    /* Navbar */
-    .navbar {
-      width: 100%;
-      background-color: #fff;
-     
-    }
-
-    .container {
-      max-width: 1350px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 16px;
-      height: 64px;
-    }
-
-
-    .nav-icons, .user-profile {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .icon-btn {
-      background: rgb(231 231 231);
-      border: none;
-      padding: 8px;
-      cursor: pointer;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s ease;
-    }
-
-    .icon-btn:hover {
-      background-color: #f0f0f0;
-    }
-
-    .icon-btn img {
-      width: 25px;
-      height: 25px;
-    }
-
-    /* Search Bar */
-    .search-bar {
-      flex: 1;
-      display: flex;
-      position: relative;
-      justify-content: center;
-      gap: 4px;
-    }
-
-    .search-input {
-      width: 100%;
-      max-width: 400px;
-      padding: 8px 40px 8px 16px;
-      border: 1px solid #ccc;
-      border-radius: 20px;
-      outline: none;
-      transition: border-color 0.3s ease;
-    }
-
-    .search-input:focus {
-      border-color: #007bff;
-    }
-
-    .mic-btn {
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .mic-btn img {
-      width: 16px;
-      height: 16px;
-    }
-
-    /* Avatar */
-    .avatar {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      overflow: hidden;
-      background-color: #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Responsiveness */
-    @media (max-width: 768px) {
-      .search-bar {
-        display: none;
+      /* Navbar */
+      .navbar {
+        width: 100%;
+        background-color: #fff;
       }
 
       .container {
-        padding: 0 12px;
+        max-width: 1350px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+        height: 64px;
       }
-    }
-  </style>
-</head>
-<body>
-  <nav class="navbar">
-    <div class="container">
-      <!-- Left side - Navigation Icons -->
-      <div class="nav-icons">
-        <button title="Home" class="icon-btn">
-          <img src="h.svg" alt="Home">
-        </button>
-        <button title="Music" class="icon-btn">
-          <img src="music.svg" alt="Music">
-        </button>
-        <button title="Videos" class="icon-btn">
-          <img src="youtube.svg" alt="Videos">
-        </button>
-        <button title="Games" class="icon-btn">
-          <img src="pc.svg" alt="Games">
-        </button>
-        <button title="Bookmarks" class="icon-btn">
-          <img src="music2.svg" alt="Bookmarks">
-        </button>
-        <button title="Bookmarks" class="icon-btn">
-            <img src="document.svg" alt="Bookmarks">
-          </button>
-      </div>
 
-      <!-- Center - Search Bar -->
-      <div class="search-bar">
-        <input type="search" placeholder="Search" class="search-input">
-        <button style="border-radius: 50% ; border:none" title="Voice Search">
-          <img src="mic.svg" style="width: 2rem" alt="Mic">
-        </button>
-      </div>
+      .nav-icons,
+      .user-profile {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
 
-      <!-- Right side - User Profiles & Settings -->
-      <div class="user-profile">
-        <div class="avatar">
-          <img src="profile.svg" alt="User 1">
-        </div>
-        <div class="avatar">
-          <img src="yunbuntv.svg" alt="User 2">
-        </div>
-        <div class="avatar">
-          <img src="kids.svg" alt="User 3">
-        </div>
-        <button class="icon-btn" title="Settings">
-          <img src="Settings.svg" alt="Settings">
-        </button>
-        <button class="icon-btn" title="Settings">
-            <img src="light.svg" alt="Settings">
+      .icon-btn {
+        background: rgb(231 231 231);
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .icon-btn:hover {
+        background-color: #f0f0f0;
+      }
+
+      .icon-btn img {
+        width: 25px;
+        height: 25px;
+      }
+
+      /* Search Bar */
+      .search-bar {
+        flex: 1;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        gap: 4px;
+      }
+
+      .search-input {
+        width: 100%;
+        max-width: 400px;
+        padding: 8px 40px 8px 16px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .search-input:focus {
+        border-color: #007bff;
+      }
+
+      .mic-btn {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .mic-btn img {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* Avatar */
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Responsiveness */
+      @media (max-width: 768px) {
+        .search-bar {
+          display: none;
+        }
+
+        .container {
+          padding: 0 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <!-- Left side - Navigation Icons -->
+        <div class="nav-icons">
+          <button title="Home" class="icon-btn">
+            <img src="h.svg" alt="Home" />
           </button>
+          <button title="Music" class="icon-btn">
+            <img src="music.svg" alt="Music" />
+          </button>
+          <button title="Videos" class="icon-btn">
+            <img src="youtube.svg" alt="Videos" />
+          </button>
+          <button title="Games" class="icon-btn">
+            <img src="pc.svg" alt="Games" />
+          </button>
+          <button title="Bookmarks" class="icon-btn">
+            <img src="music2.svg" alt="Bookmarks" />
+          </button>
+          <button title="Bookmarks" class="icon-btn">
+            <img src="document.svg" alt="Bookmarks" />
+          </button>
+        </div>
+
+        <!-- Center - Search Bar -->
+        <div class="search-bar">
+          <input type="search" placeholder="Search" class="search-input" />
+          <button style="border-radius: 50%; border: none" title="Voice Search">
+            <img src="mic.svg" style="width: 2rem" alt="Mic" />
+          </button>
+        </div>
+
+        <!-- Right side - User Profiles & Settings -->
+        <div class="user-profile">
+          <div class="avatar">
+            <img src="profile.svg" alt="User 1" />
+          </div>
+          <div class="avatar">
+            <img src="yunbuntv.svg" alt="User 2" />
+          </div>
+          <div class="avatar">
+            <img src="kids.svg" alt="User 3" />
+          </div>
+          <button class="icon-btn" title="Settings">
+            <img src="Settings.svg" alt="Settings" />
+          </button>
+          <button class="icon-btn" title="Settings">
+            <img src="light.svg" alt="Settings" />
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
-</body>
+    </nav>
+  </body>
 </html>
