@@ -36,7 +36,7 @@
       overflow: hidden;
         max-width: 1400px;
         margin: auto;
-
+text-align: end;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
@@ -328,10 +328,62 @@
       .form-control{
         margin: 0 !important;
       }
+      .dropbtn {
+background-color: transparent;
+  
+  padding: 6px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  margin: 6px;
+  position: relative;
+  display: inline-block;
+padding-inline: 9px;
+background-color: #f9f9f9;
+
+border-radius: 30px 30px 30px 30px
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
     </style>
   </head>
   <body>
+    
     <div class="container">
+      <div class="dropdown">
+        <img src="world.svg" alt="world"/>
+        <button class="dropbtn">Kurdî</button>
+        <img src="Double Alt Arrow Down.svg" alt="arrow">
+        <div class="dropdown-content">
+       
+        </div>
+      </div>
       <div class="row middle">
         <!-- Left Section -->
         <div class="col-md-3 left-section text-center">
