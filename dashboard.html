@@ -346,12 +346,11 @@
         position: relative;
       }
 
-      .flexbox{
+      .flexbox {
         display: flex;
         justify-content: center;
         align-items: center;
         margin: auto 0px;
-        
       }
       /* Custom Modal Styling */
       .custom-modal {
@@ -364,7 +363,7 @@
         display: none; /* Disable Bootstrap's default backdrop */
       }
 
-      .model-img-1{
+      .model-img-1 {
         /* width: 120px; */
         /* background-color: #ff4d4d; */
         background-color: #f2f2f2;
@@ -375,8 +374,56 @@
         width: 100%;
         animation: fadeIn 1.5s ease-in-out;
         height: 154px;
-      
       }
+
+      .welcomeBack {
+        font-family: Genos;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #ffffff;
+      }
+
+      .userName {
+        font-family: Genos;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 15px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 20px;
+      }
+      .countryContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      select {
+      -webkit-appearance: none; 
+      -moz-appearance: none;   
+      appearance: none;         
+      background: rgba(0, 0, 0, 0.15);
+      border: none;
+      border-radius: 15px;
+      width: 100%;
+      padding: 10px 0px 10px 0px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+    }
     </style>
   </head>
   <body>
@@ -393,6 +440,48 @@
     >
       Enter
     </button> -->
+    <div class="header mt-4">
+      <div>
+        <div style="background: #00000026; display: flex; border-radius: 15px">
+          <img
+            style="width: 33px; background: #00000000"
+            src="userpic.svg"
+            alt="PIC"
+            class="logo mx-1"
+          />
+          <div class="me-2 ms-1 my-1">
+            <div class="welcomeBack">Welcome back</div>
+            <div class="userName">User Name</div>
+          </div>
+        </div>
+      </div>
+      <div>
+    
+        <div class="countryContainer">
+        <div style="background: #00000026; display: flex; border-radius: 15px">
+          <img
+            style="width: 33px; background: #00000000"
+            src="country.svg"
+            alt="PIC"
+            class="logo mx-1"
+          />
+          <select class="welcomeBack" style="background: #00000000; border: none;">
+            <option style="background: #00000070; border: none;" value="kurdî" selected>Kurdî</option>
+            <option style="background: #00000070; border: none;" value="kurdî-1">Kurdî</option>
+            <option style="background: #00000070; border: none;" value="kurdî-2">Kurdî</option>
+          </select>
+          <img src="down.svg" alt="arrow" />
+          <div class="me-2 ms-1 my-1 countryContainer">
+            <!-- <div class="welcomeBack">Kurdî</div> -->
+          </div>
+        </div>
+          <div class="ms-2">
+            <img src="settings.svg" alt="arrow" />
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
     <div class="flexbox">
       <div
         class="modal fade show custom-modal"
@@ -404,7 +493,11 @@
         <div class="modal-dialog modal-dialog-centered" style="width: 313px">
           <div class="modal-content" style="max-width: 200px">
             <div class="modal-body">
-              <img class="model-img-1" src="modal-logo1.svg" alt="Yekbûn Logo" />
+              <img
+                class="model-img-1"
+                src="modal-logo1.svg"
+                alt="Yekbûn Logo"
+              />
               <div style="text-align: center">
                 <p style="font-weight: bold; margin: 0">YekBûnTV</p>
                 <p style="color: #888ea0; margin: 0">Je bu Mezena</p>
@@ -433,7 +526,9 @@
                 <p style="font-weight: bold; margin: 0">Zarok</p>
                 <p style="color: #888ea0; margin: 0">Je bu Zaroka</p>
                 <div class="login-form">
-                  <button style="background-color: green;" class="btn">Enter</button>
+                  <button style="background-color: green" class="btn">
+                    Enter
+                  </button>
                 </div>
               </div>
             </div>
