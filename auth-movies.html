@@ -115,9 +115,6 @@
         background-repeat: no-repeat;
         border-radius: 20px;
         overflow: hidden;
-
-        width: 600px;
-        height: 375px;
       }
 
       .videoCardSection1 {
@@ -353,12 +350,6 @@
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
       }
-      .view-more {
-        width: 106.82px;
-        height: 29.32px;
-        gap: 0px;
-        border-radius: 52.36px;
-      }
     </style>
   </head>
 
@@ -372,13 +363,13 @@
           <img class="img-css" src="home-nav.svg" alt="Home Icon" />
         </a>
         <a href="/TV_APP/auth-stories.html">
-          <img class="img-css" src="selected-stories.svg" alt="Stories Icon" />
+          <img class="img-css" src="stories.svg" alt="Stories Icon" />
         </a>
         <a href="/TV_APP/auth-videos.html">
           <img class="img-css" src="Layer_x0020_1 (1).svg" alt="Videos Icon" />
         </a>
         <a href="/TV_APP/auth-movies.html">
-          <img class="img-css" src="Layer_x0020_1 (2).svg" alt="Movies Icon" />
+          <img class="img-css" src="movies-nav.svg" alt="Movies Icon" />
         </a>
       </div>
       <div>
@@ -386,7 +377,7 @@
       </div>
     </div>
     <div class="main">
-      <div class="videoContainer3">
+      <div class="videoContainer">
         <div class="newStories">New Stories</div>
         <div class="videos">
           <div class="videoCard">
@@ -437,88 +428,43 @@
               <img src="watchnow.svg" role="button" alt="video" />
             </div>
           </div>
-        </div>
-      </div>
-      <div class="videoContainer3">
-        <div class="newStories">New Stories</div>
-        <div class="videos">
-          <div class="video-container3" onclick="redirectToPage('video1.html')">
-            <video
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
-              muted
-              onmouseover="this.play()"
-              onmouseout="this.pause(); this.currentTime = 0;"
-            ></video>
-            <span class="tag play-video-tag">
-              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
-              <span class="count">159k</span>
-            </span>
-            <img
-              style="width: 95%"
-              class="playedvideopart"
-              src="playedvideopart.svg"
-              alt=""
-            />
-            <div class="play-video-title">STAR WARS</div>
-            <div class="video-time">3:00</div>
-          </div>
-          <div class="video-container3" onclick="redirectToPage('video1.html')">
-            <video
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
-              muted
-              onmouseover="this.play()"
-              onmouseout="this.pause(); this.currentTime = 0;"
-            ></video>
-            <span class="tag play-video-tag">
-              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
-              <span class="count">159k</span>
-            </span>
-            <img
-              style="width: 95%"
-              class="playedvideopart"
-              src="playedvideopart.svg"
-              alt=""
-            />
-            <div class="play-video-title">STAR WARS</div>
-            <div class="video-time">3:00</div>
-          </div>
-          <div class="video-container3" onclick="redirectToPage('video1.html')">
-            <video
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
-              muted
-              onmouseover="this.play()"
-              onmouseout="this.pause(); this.currentTime = 0;"
-            ></video>
-            <span class="tag play-video-tag">
-              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
-              <span class="count">159k</span>
-            </span>
-            <img
-              style="width: 95%"
-              class="playedvideopart"
-              src="playedvideopart.svg"
-              alt=""
-            />
-            <div class="play-video-title">STAR WARS</div>
-            <div class="video-time">3:00</div>
+          <div class="videoCard">
+            <div class="videoCardSection1">
+              <span class="tag">
+                <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+                <span class="count">159k</span>
+              </span>
+              <span class="tag">Movies</span>
+            </div>
+            <div class="videoCardSection2">
+              <div>
+                <div class="videoheading">STAR WARS</div>
+                <div class="videodesc">THE RISE OF SKYWALKER</div>
+              </div>
+              <img src="watchnow.svg" role="button" alt="video" />
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="videoContainer3">
-        <div class="d-flex justify-content-between w-100 align-items-center">
-          <div class="newStories">Our Stories</div>
-          <a href="/TV_APP/auth-stories-1.html">
-            <img
-              role="button"
-              class="mt-4 pe-3 view-more"
-              src="view-more.svg"
-              alt="View More"
-            />
-          </a>
-        </div>
+      <div class="videoContainer2">
+        <div class="newStories">Latest Movies</div>
         <div class="videos">
-          <div class="video-container3" onclick="redirectToPage('video1.html')">
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
             <video
               src="https://www.w3schools.com/html/mov_bbb.mp4"
               muted
@@ -538,7 +484,27 @@
             <div class="play-video-title">STAR WARS</div>
             <div class="video-time">3:00</div>
           </div>
-          <div class="video-container3" onclick="redirectToPage('video1.html')">
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/movie.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
             <video
               src="https://www.w3schools.com/html/mov_bbb.mp4"
               muted
@@ -558,9 +524,109 @@
             <div class="play-video-title">STAR WARS</div>
             <div class="video-time">3:00</div>
           </div>
-          <div class="video-container3" onclick="redirectToPage('video1.html')">
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/movie.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+        </div>
+      </div>
+      <div class="videoContainer2">
+        <div class="newStories">Our Series</div>
+        <div class="videos">
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
             <video
               src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/movie.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/movie.mp4"
               muted
               onmouseover="this.play()"
               onmouseout="this.pause(); this.currentTime = 0;"

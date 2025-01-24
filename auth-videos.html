@@ -110,7 +110,8 @@
         /* background-attachment: fixed; */
         /* background: red; */
         display: flex;
-        background-image: url('video1.svg');
+        flex-direction: column;
+        background-image: url('video2.svg');
         background-size: cover;
         background-repeat: no-repeat;
         border-radius: 20px;
@@ -132,25 +133,31 @@
         flex: 2;
         justify-content: space-between;
         align-items: center;
-        flex-direction: column;
+        /* flex-direction: column; */
         height: 100%;
         padding-bottom: 20px;
         background: linear-gradient(
-          to right,
+          to bottom,
           rgba(0, 0, 0, 0) 0%,
           rgba(0, 0, 0, 1) 100%
         );
       }
 
+      .watchnow {
+        margin-top: auto;
+        margin-left: 30px;
+      }
       .videoheading {
         color: #fff;
-        font-family: Oswald;
-        font-size: 35px;
-        font-weight: 700;
-        line-height: 51.87px;
+        font-family: Genos;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.8px;
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
+        margin-top: auto;
+        margin-right: 30px;
       }
 
       .videodesc {
@@ -398,11 +405,13 @@
               <span class="tag">Movies</span>
             </div>
             <div class="videoCardSection2">
-              <div>
-                <div class="videoheading">STAR WARS</div>
-                <div class="videodesc">THE RISE OF SKYWALKER</div>
-              </div>
-              <img src="watchnow.svg" role="button" alt="video" />
+              <img
+                class="watchnow"
+                src="watchnow.svg"
+                role="button"
+                alt="video"
+              />
+              <div class="videoheading">STAR WARS</div>
             </div>
           </div>
           <div class="videoCard">
@@ -414,11 +423,13 @@
               <span class="tag">Movies</span>
             </div>
             <div class="videoCardSection2">
-              <div>
-                <div class="videoheading">STAR WARS</div>
-                <div class="videodesc">THE RISE OF SKYWALKER</div>
-              </div>
-              <img src="watchnow.svg" role="button" alt="video" />
+              <img
+                class="watchnow"
+                src="watchnow.svg"
+                role="button"
+                alt="video"
+              />
+              <div class="videoheading">STAR WARS</div>
             </div>
           </div>
           <div class="videoCard">
@@ -430,11 +441,13 @@
               <span class="tag">Movies</span>
             </div>
             <div class="videoCardSection2">
-              <div>
-                <div class="videoheading">STAR WARS</div>
-                <div class="videodesc">THE RISE OF SKYWALKER</div>
-              </div>
-              <img src="watchnow.svg" role="button" alt="video" />
+              <img
+                class="watchnow"
+                src="watchnow.svg"
+                role="button"
+                alt="video"
+              />
+              <div class="videoheading">STAR WARS</div>
             </div>
           </div>
         </div>
