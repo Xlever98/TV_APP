@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Genos"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings Sidebar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Genos;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .img {
+        display: flex;
+
+        justify-content: space-between;
+        background-image: url('stories-section.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        flex: 1;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+      }
+
+      .newStories {
+        font-family: Genos;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 38.4px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        margin-left: 20px;
+        margin-top: 30px;
+      }
+
+      .tag {
+        color: #fff;
+        background: #21202040;
+        border-radius: 4px;
+        padding: 3px;
+        padding-inline: 10px;
+        gap: 10px;
+        font-family: Genos;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19.2px;
+        text-align: right;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        margin-inline: 5px;
+        position: relative;
+        max-height: 25px;
+      }
+
+      .eyeopen {
+        height: 15px;
+        width: 15px;
+        top: 5px;
+        position: absolute;
+      }
+
+      .count {
+        padding-left: 20px;
+      }
+
+      .videos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 10px;
+        margin-bottom: 30px;
+      }
+
+      .video-container {
+        position: relative;
+        cursor: pointer;
+        width: 450px;
+        height: 265px;
+      }
+
+      
+      .videoContainer {
+        display: flex;
+        justify-content: center;
+        height: 330px;
+        /* height: 100%; */
+        width: 100%;
+        background-color: #67657157;
+        border-radius: 20px;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+
+      .video-container video {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+      .video-container:hover video {
+        transform: scale(1.05);
+      }
+      .video-time {
+        position: absolute;
+        bottom: 25px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        padding: 0px 3px 2px 3px;
+        font-size: 14px;
+        border-radius: 5px;
+        font-family: Genos;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: right;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      .play-video-tag {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .play-video-title {
+        position: absolute;
+        bottom: 25px;
+        left: 10px;
+        font-family: Genos;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 21.6px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #fff;
+      }
+      .playedvideopart {
+        position: absolute;
+        bottom: 60px;
+        left: 10px;
+        overflow: hidden;
+      }
+      .view-more {
+        width: 106.82px;
+        height: 29.32px;
+        gap: 0px;
+        border-radius: 52.36px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="img">
+
+      <div class="videoContainer">
+        <div class="videos">
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        function redirectToPage(url) {
+          window.location.href = url;
+        }
+      </script>
+    </div>
+  </body>
+</html>
