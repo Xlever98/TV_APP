@@ -51,16 +51,28 @@
         position: relative;
       }
 
+      .img-mobile {
+        display: flex;
+
+        justify-content: space-between;
+        background-image: url('clouds-bg.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        flex: 1;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+      }
       .footer {
         background-image: url('grass.svg');
-        background-size: contain;
-        background-repeat: repeat;
         background-position: top center;
         flex: 0.2;
         width: 100%;
         z-index: 2;
         position: relative;
         margin-top: -150px;
+        z-index: 100000000;
       }
 
       .img-css {
@@ -200,8 +212,10 @@
       .video-container {
         position: relative;
         cursor: pointer;
-        width: 450px;
-        height: 265px;
+        border-radius: 10px;
+        overflow: hidden;
+        aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+        background: #000;
       }
 
       .video-container3 {
@@ -209,10 +223,11 @@
         cursor: pointer;
         border-radius: 15px;
         overflow: hidden;
-        width: 600px;
-        height: 375px;
+        aspect-ratio: 16 / 10;
+        /* width: 600px; */
+        /* height: 375px; */
         gap: 0px;
-        opacity: 0px;
+        transition: transform 0.3s ease;
       }
 
       .video-container3 video {
@@ -227,11 +242,13 @@
       .video-container2 {
         position: relative;
         cursor: pointer;
-        width: 325px;
-        height: 460px;
+        /* width: 325px; */
+        /* height: 460px; */
         gap: 0px;
         border-radius: 15px;
         overflow: hidden;
+        aspect-ratio: 325 / 460; /* Maintains the 325x460 ratio */
+        transition: transform 0.3s ease;
       }
 
       .video-container2 video {
@@ -258,29 +275,34 @@
 
       .videoContainer2 {
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        height: 530px;
+        /* height: 530px; */
         /* height: 100%; */
         width: 100%;
         background-color: #67657157;
         border-radius: 20px;
-        flex-direction: column;
         margin-bottom: 20px;
+        padding: 20px;
       }
       .videoContainer3 {
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        height: 450px;
+        /* height: 450px; */
         /* height: 100%; */
-        width: 100%;
+        /* width: 100%; */
         background-color: #67657157;
         border-radius: 20px;
-        flex-direction: column;
         margin-bottom: 20px;
+        padding: 20px;
       }
       .video-container video {
         width: 100%;
         border-radius: 10px;
+        transition: transform 0.3s ease;
+        height: 100%;
+        object-fit: cover; /* Ensure video fills container */
         transition: transform 0.3s ease;
       }
       .video-container:hover video {
@@ -369,11 +391,96 @@
           grid-template-columns: 1fr; /* 1 card in a row */
         }
       }
+
+      /* Mobile Navigation */
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        padding: 10px 20px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .burger-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .burger-icon div {
+        width: 30px;
+        height: 3px;
+        background: #000;
+        border-radius: 2px;
+      }
+
+      /* Hidden Menu for Mobile */
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        background: #fff;
+        border-radius: 8px;
+        /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+        padding: 10px 20px;
+        flex-direction: column;
+        z-index: 1000000;
+      }
+
+      .mobile-menu a {
+        text-decoration: none;
+        color: #000;
+        font-size: 16px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+
+      @media (min-width: 768px) {
+        .img-mobile {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main {
+          margin-top: 20px;
+        }
+        .desktop-nav {
+          display: none; /* Hide the desktop nav */
+        }
+
+        .mobile-nav {
+          display: flex; /* Show the mobile nav */
+          right: 0;
+        }
+      }
     </style>
   </head>
 
   <body>
-    <div class="img">
+    <div class="img-mobile">
+      <div class="mobile-nav">
+        <div class="burger-icon" onclick="toggleMobileMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="/auth-home.html">Home</a>
+          <a href="/auth-stories.html">Stories</a>
+          <a href="/auth-videos.html">Videos</a>
+          <a href="/auth-movies.html">Movies</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="img desktop-nav">
       <div>
         <img class="img-css" src="iconone.svg" alt="icon" />
       </div>
@@ -395,6 +502,7 @@
         <img class="img-css" src="Group 1000008250.svg" alt="icon" />
       </div>
     </div>
+
     <div class="main">
       <div class="videoContainer">
         <div class="newStories">New Stories</div>
@@ -698,6 +806,27 @@
       <script>
         function redirectToPage(url) {
           window.location.href = url;
+        }
+      </script>
+      <script>
+        function toggleMobileMenu() {
+          const mobileMenu = document.getElementById('mobileMenu');
+          if (mobileMenu.style.display === 'flex') {
+            mobileMenu.style.display = 'none';
+          } else {
+            mobileMenu.style.display = 'flex';
+          }
+        }
+      </script>
+      <script>
+        function toggleMobileMenu() {
+          const mobileMenu = document.getElementById('mobileMenu');
+          // Toggle the display property between 'flex' and 'none'
+          if (mobileMenu.style.display === 'flex') {
+            mobileMenu.style.display = 'none';
+          } else {
+            mobileMenu.style.display = 'flex';
+          }
         }
       </script>
     </div>
