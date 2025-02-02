@@ -71,13 +71,12 @@
       .videoContainer {
         display: flex;
         justify-content: center;
-        height: 330px;
-        /* height: 100%; */
         width: 100%;
         background-color: #67657157;
         border-radius: 20px;
         flex-direction: column;
         margin-bottom: 20px;
+        padding: 10px;
       }
 
       .main {
@@ -104,11 +103,19 @@
         margin-top: 30px;
       }
 
+      .videos {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(250px, 1fr)
+        ); /* Dynamic columns */
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+      }
+
       .videoCard {
-        width: 450px;
-        height: 265px;
-        /* background-attachment: fixed; */
-        /* background: red; */
+        aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
         display: flex;
         background-image: url('video1.svg');
         background-size: cover;
@@ -142,9 +149,10 @@
       .videoheading {
         color: #fff;
         font-family: Oswald;
-        font-size: 35px;
+        /* font-size: 35px; */
+        font-size: 24px;
+        /* line-height: 51.87px; */
         font-weight: 700;
-        line-height: 51.87px;
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
@@ -153,9 +161,8 @@
       .videodesc {
         color: #fff;
         font-family: Oswald;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 700;
-        line-height: 32.6px;
         text-align: left;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
@@ -165,13 +172,11 @@
         color: #fff;
         background: #21202040;
         border-radius: 4px;
-        padding: 3px;
-        padding-inline: 10px;
-        gap: 10px;
+        padding: 3px 10px;
+        font-size: 14px;
         font-family: Genos;
-        font-size: 16px;
         font-weight: 600;
-        line-height: 19.2px;
+        /* line-height: 19.2px; */
         text-align: right;
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
@@ -191,14 +196,7 @@
         padding-left: 20px;
       }
 
-      .videos {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        gap: 10px;
-        margin-bottom: 30px;
-      }
-
+      /* old */
       .video-container {
         position: relative;
         cursor: pointer;
@@ -350,6 +348,27 @@
         text-underline-position: from-font;
         text-decoration-skip-ink: none;
       }
+
+      @media (max-width: 1400px) {
+        /* For screens smaller than 1200px */
+        .videos {
+          grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
+        }
+      }
+
+      @media (max-width: 1100px) {
+        /* For screens smaller than 900px */
+        .videos {
+          grid-template-columns: repeat(2, 1fr); /* 2 cards in a row */
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* For screens smaller than 600px */
+        .videos {
+          grid-template-columns: 1fr; /* 1 card in a row */
+        }
+      }
     </style>
   </head>
 
@@ -371,7 +390,6 @@
         <a href="/auth-movies.html">
           <img class="img-css" src="Layer_x0020_1 (2).svg" alt="Movies Icon" />
         </a>
-        
       </div>
       <div>
         <img class="img-css" src="Group 1000008250.svg" alt="icon" />
