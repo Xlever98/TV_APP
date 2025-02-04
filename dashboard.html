@@ -164,7 +164,7 @@
     @media (max-width: 768px) {
       .logo {
         max-width: 100px;
-        height: 127px;
+        /* height: 127px; */
       }
 
       .bottom-image {
@@ -208,6 +208,10 @@
       /* margin: 0 auto 20px; */
       width: 100%;
       animation: fadeIn 1.5s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
     }
 
     .login-form {
@@ -360,7 +364,7 @@
       position: relative;
       display: block;
       /* Override Bootstrap's inline behavior */
-      max-width: 300px;
+      max-width: 200px;
       /* Set a consistent width for the modals */
     }
 
@@ -431,6 +435,19 @@
       color: white;
       cursor: pointer;
     }
+    @media (max-width: 768px) {
+      .flexbox {
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      justify-content: end;
+      flex-direction: column;
+      width: max-content;
+      /* display: none; */
+    }
+    }
   </style>
 </head>
 
@@ -460,7 +477,7 @@
     </div>
     <div>
 
-      <div class="countryContainer">
+      <div class="countryContainer mt-3 mt-md-0">
         <div style="background: #00000026; display: flex; border-radius: 15px">
           <img style="width: 33px; background: #00000000" src="country.svg" alt="PIC" class="logo mx-1" />
           <select class="welcomeBack" style="background: #00000000; border: none;">
@@ -481,7 +498,7 @@
   </div>
   </div>
   <div class="flexbox">
-    <div class="modal fade show custom-modal" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel"
+    <div class="modal fade show custom-modal mx-md-5" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" style="width: 313px">
         <div class="modal-content" style="max-width: 200px">
@@ -500,7 +517,7 @@
     </div>
 
     <!-- Right Modal -->
-    <div class="modal fade show custom-modal" id="infoModal2" tabindex="-1" aria-labelledby="infoModalLabel"
+    <div class="modal fade show custom-modal mx-md-5" id="infoModal2" tabindex="-1" aria-labelledby="infoModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" style="width: 313px">
         <div class="modal-content" style="max-width: 200px">
