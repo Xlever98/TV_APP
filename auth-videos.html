@@ -41,7 +41,7 @@
         display: flex;
 
         justify-content: space-between;
-        background-image: url('clouds-bg.svg');
+        background-image: url("clouds-bg.svg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
@@ -55,7 +55,7 @@
         display: flex;
 
         justify-content: space-between;
-        background-image: url('clouds-bg.svg');
+        background-image: url("clouds-bg.svg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
@@ -65,14 +65,17 @@
         position: relative;
       }
       .footer {
-        background-image: url('grass.svg');
-        background-position: top center;
-        flex: 0.2;
+        background-image: url(grass.svg);
+        background-position: bottom;
+        flex: 1;
         width: 100%;
         z-index: 2;
         position: relative;
-        margin-top: -150px;
+        /* margin-top: -150px; */
         z-index: 100000000;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        background-size: contain;
       }
 
       .img-css {
@@ -96,10 +99,9 @@
         position: absolute;
         z-index: 1000000;
         margin-top: 120px;
-        height: 100%;
+        height: calc(100% - 200px);
         padding: 20px;
         overflow: scroll;
-        padding-bottom: 200px;
       }
 
       .newStories {
@@ -129,7 +131,7 @@
       .videoCard {
         aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
         display: flex;
-        background-image: url('video1.svg');
+        background-image: url("video1.svg");
         background-size: cover;
         background-repeat: no-repeat;
         border-radius: 20px;
@@ -266,7 +268,7 @@
         /* background-attachment: fixed; */
         /* background: red; */
         display: flex;
-        background-image: url('video1.svg');
+        background-image: url("video1.svg");
         background-size: cover;
         background-repeat: no-repeat;
         border-radius: 20px;
@@ -465,14 +467,14 @@
         .videoheading {
           font-size: 20px;
         }
-        .videodesc{
+        .videodesc {
           font-size: 12px;
         }
-        .watchnow{
+        .watchnow {
           scale: 0.7;
         }
         .tag {
-          margin: 2px
+          margin: 2px;
         }
       }
     </style>

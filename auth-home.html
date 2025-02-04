@@ -65,14 +65,17 @@
         position: relative;
       }
       .footer {
-        background-image: url('grass.svg');
-        background-position: top center;
-        flex: 0.2;
-        width: 100%;
-        z-index: 2;
-        position: relative;
-        margin-top: -150px;
-        z-index: 100000000;
+           background-image: url(grass.svg);
+    background-position: bottom;
+    flex: 1;
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    /* margin-top: -150px; */
+    z-index: 100000000;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
       }
 
       .img-css {
@@ -92,14 +95,14 @@
       }
 
       .main {
-        width: 100%;
-        position: absolute;
-        z-index: 1000000;
-        margin-top: 120px;
-        height: 100%;
-        padding: 20px;
-        overflow: scroll;
-        padding-bottom: 200px;
+      
+            width: 100%;
+    position: absolute;
+    z-index: 1000000;
+    margin-top: 120px;
+    height: calc(100% - 200px);
+    padding: 20px;
+    overflow: scroll;
       }
 
       .newStories {
