@@ -10,9 +10,12 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      /* overflow-x: auto;
+      white-space: nowrap; */
     }
 
     body {
+      background: linear-gradient(to right, #000000 50%, #4b4a4a 50%);
       display: flex;
       height: 100vh;
       flex-direction: column;
@@ -24,7 +27,6 @@
       display: flex;
       justify-content: space-between;
     }
-
     .buttonss {
       display: flex;
     }
@@ -54,6 +56,38 @@
       height: 40px;
       width: 40px;
     }
+    .main-content {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 250px;
+      margin: 15px;
+      height: 100vh;
+      overflow-y: auto; /* Allows scrolling */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      border-radius: 1rem;
+
+      /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer and Edge */
+    }
+
+    .sidebar::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+    .sidebar img {
+      width: 230px;
+    }
+
+    .content {
+      flex: 1;
+      padding: 1rem;
+    }
     .song-section {
       display: flex;
       align-items: center;
@@ -64,10 +98,33 @@
       align-items: center;
       text-align: center;
     }
+    .artist-img {
+      width: 256px;
+      height: 290px;
+      color: white;
+      margin: 10px;
+      position: relative;
+      border-radius: 13px;
+      background-size: cover;
+      background-position: center;
+    }
+    .artist-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Push text to the bottom */
+      align-items: flex-start; /* Align text to the left */
+      color: white; /* Ensure text is visible */
+      position: absolute;
+      bottom: 10px; /* Positions text at the bottom */
+      left: 10px;
+    }
 
     .latest {
+      display: flex;
+      text-align: center;
+      justify-content: center;
       font: 5px;
-      background-color: black;
+      background-color: #474747;
       color: white;
       border-radius: 4px;
       border: none;
@@ -75,6 +132,52 @@
       align-items: center;
       padding: 5px;
       margin: 10px;
+    }
+    .song-img {
+      width: 335px;
+      height: 200px;
+      margin-top: 3rem;
+      margin: 2px;
+      border-radius: 14px;
+    }
+    .vision {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: flex-end; /* Moves content to the right */
+      background: #0000004d;
+      border-radius: 3px;
+      margin-top: 11px;
+      margin-right: 9px;
+      color: white;
+      height: 30px;
+      width: 25%; /* Ensures it takes full width */
+      padding: 4px;
+      margin-left: auto;
+    }
+    .vision img {
+      margin-right: 5px;
+      width: 20px;
+      height: 20px;
+    }
+    .play-text {
+      display: flex;
+      justify-content: space-between; /* Space title and duration */
+      align-items: center;
+      color: white;
+      padding: 4px;
+      position: relative;
+      width: 100%;
+      bottom: 0.01px;
+      background-color: #0000004d;
+    }
+
+    .play-container {
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      text-align: center;
+      margin-top: 32px;
     }
   </style>
   <body>
@@ -99,12 +202,114 @@
         <img class="icon-img" src="/images/navbar10.svg" alt="Settings" />
       </div>
     </div>
+    <div class="main-content">
+      <div class="sidebar">
+        <div class="first">
+          <img src="/images/Group 1000008406.png" alt="" />
+        </div>
+        <div class="first">
+          <img src="/images/Group 1000008422.png" alt="" />
+        </div>
+        <div class="first">
+          <img src="/images/Group 1000008421.png" alt="" />
+        </div>
+        <div class="first">
+          <img src="/images/Group 1000008423.png" alt="" />
+        </div>
+      </div>
 
-    <div class="song-section">
-      <p class="latest">Latest Songs</p>
-    </div>
-    <div class="artist-section">
-      <p class="latest">Latest Artist</p>
+      <div class="content">
+        <p class="latest">Latest Songs</p>
+        <div class="song-section">
+          <!-- <div
+            class="song-img"
+            style="background-image: url('/Group\ 1000008372.png')"
+          >
+            <div class="vision">
+              <img src="/vision.svg" alt="vision" />
+              <p>159K</p>
+            </div>
+            <div class="play-container"><img src="/play.png" alt="play" /></div>
+            <div class="play-text">
+              <p>Song Title</p>
+              <p>03:00</p>
+            </div>
+          </div> -->
+          <div
+            class="song-img"
+            style="background-image: url('/Group\ 1000008372.png')"
+          >
+            <div class="vision">
+              <img src="/vision.svg" alt="vision" />
+              <p>159K</p>
+            </div>
+            <div class="play-container"><img src="/play.png" alt="play" /></div>
+            <div class="play-text">
+              <p>Song Title</p>
+              <p>03:00</p>
+            </div>
+          </div>
+
+          <div
+            class="song-img"
+            style="background-image: url('/Group\ 1000008372.png')"
+          >
+            <div class="vision">
+              <img src="/vision.svg" alt="vision" />
+              <p>159K</p>
+            </div>
+            <div class="play-container"><img src="/play.png" alt="play" /></div>
+            <div class="play-text">
+              <p>Song Title</p>
+              <p>03:00</p>
+            </div>
+          </div>
+          <div
+            class="song-img"
+            style="background-image: url('/Group\ 1000008372.png')"
+          >
+            <div class="vision">
+              <img src="/vision.svg" alt="vision" />
+              <p>159K</p>
+            </div>
+            <div class="play-container"><img src="/play.png" alt="play" /></div>
+            <div class="play-text">
+              <p>Song Title</p>
+              <p>03:00</p>
+            </div>
+          </div>
+        </div>
+        <p class="latest">Latest Artist</p>
+        <div class="artist-section">
+          <div
+            class="artist-img"
+            style="background-image: url('/image 1070.png')"
+          >
+            <div class="artist-text">
+              <p>Artist Name</p>
+              <p>Rojava</p>
+            </div>
+          </div>
+          <div
+            class="artist-img"
+            style="background-image: url('/image 1064.png')"
+          >
+            <div class="artist-text">
+              <p>Artist Name</p>
+              <p>Basur</p>
+            </div>
+          </div>
+          <div
+            class="artist-img"
+            style="background-image: url('/image 1063.png')"
+          >
+            <div class="artist-text">
+              <p>Artist Name</p>
+              <p>Bakur</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

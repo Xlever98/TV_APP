@@ -58,47 +58,47 @@
     }
     .content-text {
       display: flex;
+      flex-direction: column;
       justify-content: flex-end;
+      color: white;
+      font-size: 1.5rem;
     }
-
+    .vision {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: flex-end; /* Moves content to the right */
+      background: #0000004d;
+      border-radius: 3px;
+      margin-top: 11px;
+      margin-right: 9px;
+      color: white;
+      height: 30px;
+      width: 25%; /* Ensures it takes full width */
+      padding: 4px;
+      margin-left: auto;
+    }
     .show-text {
       display: flex;
       color: white;
       text-align: center;
+      justify-content: space-between; /* Keeps text on left, button on right */
+      padding: 10px;
+    }
+    .text-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: 5px;
     }
     .show-text img {
       height: 25px;
-    }
-    .watch {
-      background-color: #ed1c24;
-      color: white;
-      display: flex;
-      align-items: center;
-      position: absolute;
-      bottom: 10px;
-      border: none;
-      border-radius: 5px;
-      padding: 6px;
-      width: 34%;
-    }
-    .watch img {
-      margin-right: 7px;
-    }
-    .shows-img {
-      width: 280%;
-      height: 870%;
-      margin: 10px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 13px;
     }
     .movies {
       background-color: #afafaf;
       padding: 0px 6px;
       border-radius: 5px;
-      margin-top: 15px;
       height: 22px;
-      margin-left: 8px;
+      margin: 2px;
       display: flex;
       align-items: center;
       font-size: 14px;
@@ -109,11 +109,49 @@
       margin: 3px;
     }
     .movies-button {
+      display: flex;
+      text-align: center;
       background-color: white;
       border: none;
       border-radius: 10px;
-      margin: 5px;
-      padding: 5px 5px 2px 5px;
+      padding: 5px;
+    }
+
+    .watch {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Ensures button is left, text is right */
+      position: absolute;
+      bottom: 10px; /* Adjust position */
+      left: 0;
+      padding: 4px 10px; /* Adjust spacing */
+      color: white;
+      width: 100%;
+    }
+    .watch-text {
+      display: flex;
+      align-items: center;
+      background-color: #ed1c24;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      padding: 4px 7px;
+      width: fit-content;
+    }
+    .watch img {
+      margin-right: 7px;
+    }
+    .watch-text-container {
+      display: flex;
+      align-items: flex-end; /* Align text to the right */
+    }
+    .shows-img {
+      width: 350%;
+      height: 610%;
+      margin: 10px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 13px;
     }
   </style>
   <body>
@@ -138,36 +176,71 @@
 
     <div class="content">
       <div class="content-img" style="background: url('/image 1054.png')">
-        <p>Clip Name</p>
-        <p>Artist name</p>
-        <button class="watch">
-          <img src="/images/playbutton.svg" alt="" />Watch Now
-        </button>
+        <div class="content-text">
+          <p>Clip Name</p>
+          <p>Artist name</p>
+        </div>
+        <div class="watch">
+          <button class="watch-text">
+            <img src="/images/playbutton.svg" alt="" />Watch Now
+          </button>
+          <div class="watch-text-container">
+            <p class="movies">
+              <img src="/Group 1000008582.png" alt="star" /> Nû ye
+            </p>
+            <p class="movies">Movies</p>
+          </div>
+        </div>
       </div>
       <div class="content-img" style="background: url('/image 1071.png')">
-        <p>Artist name</p>
-        <p>Rojava</p>
-
-        <button class="watch">
-          <img src="/images/playbutton.svg" alt="" />Watch Now
-        </button>
+        <div class="content-text">
+          <p>Artist name</p>
+          <p>Rojava</p>
+        </div>
+        <div class="watch">
+          <button class="watch-text">
+            <img src="/images/playbutton.svg" alt="" />Watch Now
+          </button>
+          <div class="watch-text-container">
+            <p class="movies">
+              <img src="/Group 1000008582.png" alt="star" /> Nû ye
+            </p>
+            <p class="movies">Movies</p>
+          </div>
+        </div>
       </div>
       <div class="content-img" style="background: url('/image 1125.png')">
-        <p>Channel name</p>
-        <p>Rojava</p>
-        <button class="watch">
-          <img src="/images/playbutton.svg" alt="" />Watch Now
-        </button>
+        <div class="content-text">
+          <p>Channel name</p>
+          <p class="vision"><img src="/images/thumb.png" alt="" />159K</p>
+          <p class="vision">Politic</p>
+        </div>
+        <div class="watch">
+          <button class="watch-text">
+            <img src="/images/playbutton.svg" alt="" />Watch Now
+          </button>
+          <div class="watch-text-container">
+            <button class="movies-button">
+              <img src="/live-alt (1) 1.png" alt="live" />
+            </button>
+          </div>
+        </div>
       </div>
       <div class="content-img" style="background: url('/image 1127.png')">
         <div class="content-text">
           <p>TV Channel</p>
-
-          <p><br />Channel Name</p>
+          <p>Channel Name</p>
         </div>
-        <button class="watch">
-          <img src="/images/playbutton.svg" alt="" />Watch Now
-        </button>
+        <div class="watch">
+          <button class="watch-text">
+            <img src="/images/playbutton.svg" alt="" />Watch Now
+          </button>
+          <div class="watch-text-container">
+            <button class="movies-button">
+              <img src="/live-alt (1) 1.png" alt="live" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="shows">
@@ -176,10 +249,12 @@
         class="shows-img"
       >
         <div class="show-text">
-          <p class="movies">
-            <img src="/Group 1000008582.png" alt="star" /> Nû ye
-          </p>
-          <p class="movies">Movies</p>
+          <div class="text-container">
+            <p class="movies">
+              <img src="/Group 1000008582.png" alt="star" /> Nû ye
+            </p>
+            <p class="movies">Movies</p>
+          </div>
           <button class="movies-button">
             <img src="/moviesVector.svg" alt="vector" />
           </button>
@@ -191,10 +266,12 @@
         class="shows-img"
       >
         <div class="show-text">
-          <p class="movies">
-            <img src="/Group 1000008582.png" alt="star" /> Nû ye
-          </p>
-          <p class="movies">Movies</p>
+          <div class="text-container">
+            <p class="movies">
+              <img src="/Group 1000008582.png" alt="star" /> Nû ye
+            </p>
+            <p class="movies">Movies</p>
+          </div>
           <button class="movies-button">
             <img src="/Group 1000008175.png" alt="vector" />
           </button>
@@ -206,10 +283,12 @@
         class="shows-img"
       >
         <div class="show-text">
-          <p class="movies">
-            <img src="/Group 1000008582.png" alt="star" /> Nû ye
-          </p>
-          <p class="movies">Movies</p>
+          <div class="text-container">
+            <p class="movies">
+              <img src="/Group 1000008582.png" alt="star" /> Nû ye
+            </p>
+            <p class="movies">Movies</p>
+          </div>
           <button class="movies-button">
             <img src="/camera-movie 1.png" alt="vector" />
           </button>
@@ -221,10 +300,12 @@
         style="background-image: url('/images/Nikola Tesla 2.png')"
       >
         <div class="show-text">
-          <p class="movies">
-            <img src="/Group 1000008582.png" alt="star" /> Nû ye
-          </p>
-          <p class="movies">Movies</p>
+          <div class="text-container">
+            <p class="movies">
+              <img src="/Group 1000008582.png" alt="star" /> Nû ye
+            </p>
+            <p class="movies">Movies</p>
+          </div>
           <button class="movies-button">
             <img src="/photo-film-music 1.png" alt="vector" />
           </button>
