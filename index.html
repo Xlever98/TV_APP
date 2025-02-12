@@ -1,226 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Genos"
+      rel="stylesheet"
+    />
     <title>YEKBÛN TV</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(135deg, 
-                rgba(144, 238, 144, 0.1) 0%, 
-                rgba(255, 255, 255, 1) 25%, 
-                rgba(255, 255, 255, 1) 75%, 
-                rgba(144, 238, 144, 0.1) 100%
-            );
-            position: relative;
-            overflow-x: hidden;
-        }
+      body {
+        background-image: url("Graphic_Element.svg") !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        font-family: Genos;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          rgba(144, 238, 144, 0.1) 0%,
+          rgba(255, 255, 255, 1) 25%,
+          rgba(255, 255, 255, 1) 75%,
+          rgba(144, 238, 144, 0.1) 100%
+        );
+        position: relative;
+        overflow-x: hidden;
+      }
 
-        .background-pattern {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
+      .background-pattern {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+      }
 
-        .corner {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(144, 238, 144, 0.1);
-        }
+      .corner {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: rgba(144, 238, 144, 0.1);
+      }
 
-        .top-left {
-            top: -150px;
-            left: -150px;
-            transform: rotate(45deg);
-        }
+      .top-left {
+        top: -150px;
+        left: -150px;
+        transform: rotate(45deg);
+      }
 
-        .top-right {
-            top: -150px;
-            right: -150px;
-            transform: rotate(45deg);
-        }
+      .top-right {
+        top: -150px;
+        right: -150px;
+        transform: rotate(45deg);
+      }
 
-        .bottom-left {
-            bottom: -150px;
-            left: -150px;
-            transform: rotate(45deg);
-        }
+      .bottom-left {
+        bottom: -150px;
+        left: -150px;
+        transform: rotate(45deg);
+      }
 
-        .bottom-right {
-            bottom: -150px;
-            right: -150px;
-            transform: rotate(45deg);
-        }
+      .bottom-right {
+        bottom: -150px;
+        right: -150px;
+        transform: rotate(45deg);
+      }
 
-        .logo-container {
-            text-align: center;
-            padding: 2rem;
-            max-width: 90%;
-            width: 60%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 2rem;
-        }
+      .logo-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex: 1; /* Ensure this section takes all remaining space */
+        padding: 2rem;
+      }
 
-        .links {
-            text-align: left;
-        }
+      .logo {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+      }
 
-        .links p {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 5px;
-        }
+      .progress-container {
+        width: 200px;
+        height: 4px;
+        background-color: #f1f1f1;
+        border-radius: 2px;
+        overflow: hidden;
+        position: relative;
+        margin-top: 20px;
+      }
 
-        .content-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            flex: 1;
-        }
+      .progress-bar {
+        position: absolute;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: #ff4d4d;
+        border-radius: 2px;
+        animation: loading 2s ease-in-out infinite;
+      }
 
+      @keyframes loading {
+        0% {
+          left: -100%;
+          width: 100%;
+        }
+        50% {
+          left: 0;
+          width: 100%;
+        }
+        100% {
+          left: 100%;
+          width: 100%;
+        }
+      }
+
+      /* Centered copyright text below the footer image */
+      .footer-content {
+        text-align: center;
+        font-size: 14px;
+      }
+
+      /* Footer bottom-right text */
+      .footer-right {
+        position: fixed;
+        right: 25px;
+        bottom: 1px;
+        font-size: 14px;
+      }
+
+      .bottom-image {
+        max-width: 90%;
+        width: 2.25rem;
+        height: auto;
+        margin-top: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @media (max-width: 768px) {
         .logo {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-        }
-
-        .progress-container {
-            width: 200px;
-            height: 4px;
-            background-color: #f1f1f1;
-            border-radius: 2px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .progress-bar {
-            position: absolute;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: #ff4d4d;
-            border-radius: 2px;
-            animation: loading 2s ease-in-out infinite;
-        }
-
-        @keyframes loading {
-            0% {
-                left: -100%;
-                width: 100%;
-            }
-            50% {
-                left: 0;
-                width: 100%;
-            }
-            100% {
-                left: 100%;
-                width: 100%;
-            }
+          max-width: 200px;
         }
 
         .bottom-image {
-            max-width: 90%;
-            width: 5%;
-            height: auto;
-            margin-top: 2rem;
+          width: 250px;
         }
 
-        @media (max-width: 768px) {
-            .logo-container {
-                width: 90%;
-                flex-direction: column;
-                align-items: center;
-            }
+        .footer-right {
+          font-size: 10px;
+        }
+      }
 
-            .links {
-                text-align: center;
-                margin-bottom: 20px;
-            }
-
-            .content-wrapper {
-                width: 100%;
-            }
-
-            .logo {
-                max-width: 250px;
-            }
-
-            .corner {
-                width: 200px;
-                height: 200px;
-            }
-
-            .progress-container {
-                width: 180px;
-            }
-
-            .bottom-image {
-                width: 300px;
-            }
+      @media (max-width: 480px) {
+        .logo {
+          max-width: 150px;
         }
 
-        @media (max-width: 480px) {
-            .logo-container {
-                padding: 1rem;
-            }
-
-            .logo {
-                max-width: 200px;
-            }
-
-            .corner {
-                width: 150px;
-                height: 150px;
-            }
-
-            .progress-container {
-                width: 150px;
-            }
-
-            .links p {
-                font-size: 11px;
-            }
-
-            .bottom-image {
-                width: 250px;
-            }
+        .bottom-image {
+          width: 200px;
         }
+
+        .footer-right {
+          font-size: 9px;
+        }
+      }
     </style>
-</head>
-<body>
-    <div class="background-pattern">
-        <div class="corner top-left"></div>
-        <div class="corner top-right"></div>
-        <div class="corner bottom-left"></div>
-        <div class="corner bottom-right"></div>
-    </div>
+  </head>
+  <body>
+    <!-- Logo and Progress Bar Section (Centered) -->
     <div class="logo-container">
-       
-        <div class="content-wrapper">
-            <img src="1.svg" alt="YEKBÛN TV Logo" class="logo">
-            <div class="progress-container">
-                <div class="progress-bar"></div>
-            </div>
-        </div>
+      <a href="home.html" >
+      <img src="1.svg" alt="YEKBÛN TV Logo" class="logo" />
+      </a>
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
     </div>
-    <img src="Logo Design 1.svg" alt="Bottom Image" class="bottom-image">
-</body>
-</html>
 
+    <!-- Bottom Footer Image -->
+    <img src="Logo Design 1.svg" alt="Bottom Image" class="bottom-image" />
+
+    <!-- Copyright Section below the Footer Image -->
+    <div style="margin-bottom: 1rem" class="footer-content">
+      <p style="margin: 0">Copyright Connect.ltd</p>
+    </div>
+
+    <!-- YekTV Version Text (Bottom-right) -->
+    <div style="margin-bottom: 1rem" class="footer-right">
+      <p style="margin: 0">YekTV Ver. 2.0</p>
+    </div>
+    <script>
+      setTimeout(function() {
+          window.location.href = "/dashboard.html"; // Change to your actual path
+      }, 3000); // 3000ms = 3 seconds
+  </script>
+  </body>
+</html>

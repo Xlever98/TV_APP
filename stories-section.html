@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Genos"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings Sidebar</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Genos;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .main {
+        display: flex;
+
+        justify-content: space-between;
+        background-image: url('stories-section.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        flex: 1;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+      }
+
+      .carousel-container {
+        width: 98%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        padding: 20px;
+        overflow: hidden;
+        position: relative;
+        margin-inline: auto;
+      }
+
+      .carousel {
+        display: flex;
+        gap: 15px;
+        transition: transform 0.5s ease;
+        width: 100%;
+      }
+
+      .carousel-wrapper {
+        overflow: hidden;
+      }
+
+      .video-container {
+        position: relative;
+        cursor: pointer;
+        width: 250px;
+        border-radius: 10px;
+        background-color: #1f1f1f;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .video-container video {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .video-container:hover video {
+        transform: scale(1.05);
+      }
+
+      .tag.play-video-tag {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 5px 8px;
+        border-radius: 4px;
+      }
+
+      .tag img {
+        height: 16px;
+      }
+
+      .play-video-title {
+        position: absolute;
+        bottom: 25px;
+        left: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .video-time {
+        position: absolute;
+        bottom: 25px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 5px;
+      }
+
+      .playedvideopart {
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: #ff0000;
+      }
+
+      /* Navigation arrows */
+      .arrow-svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        /* background-color: rgba(0, 0, 0, 0.8); */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        transition: 0.3s ease;
+        color: #fff;
+        
+      }
+
+      .arrow-svg:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .arrow-svg.left {
+        left: 10px;
+      }
+
+      .arrow-svg.right {
+        right: 10px;
+      }
+
+      .arrow-svg img {
+        width: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .video-container {
+          width: 200px;
+        }
+
+        .arrow-svg {
+          width: 30px;
+          height: 30px;
+        }
+
+        .arrow-svg img {
+          width: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body class="main">
+    <div>
+      The Smurfs
+
+    </div>
+    <div class="carousel-container">
+      <!-- Carousel Wrapper -->
+      <div class="carousel-wrapper">
+        <div id="carousel" class="carousel">
+          <!-- Video Cards -->
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+
+          <div class="video-container" onclick="redirectToPage('video2.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen" src="eye-open.svg" alt="" />
+              <span class="count">240k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">AVENGERS</div>
+            <div class="video-time">4:15</div>
+          </div>
+
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+
+          <!-- Add more video cards here -->
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <div class="arrow-svg left" onclick="slide('left')">
+        <img src="left-arrow.svg" alt="Left Arrow" />
+      </div>
+      <div class="arrow-svg right" onclick="slide('right')">
+        <img src="right-arrow.svg" alt="Right Arrow" />
+      </div>
+    </div>
+
+    <script>
+      const carousel = document.getElementById('carousel');
+      let offset = 0;
+
+      function slide(direction) {
+        const cardWidth =
+          document.querySelector('.video-container').offsetWidth + 15; // Card + gap
+        const maxOffset = -(carousel.children.length - 3) * cardWidth; // 3 visible cards
+
+        if (direction === 'left') {
+          offset = Math.min(offset + cardWidth, 0);
+        } else if (direction === 'right') {
+          offset = Math.max(offset - cardWidth, maxOffset);
+        }
+
+        carousel.style.transform = `translateX(${offset}px)`;
+      }
+
+      function redirectToPage(url) {
+        window.location.href = url;
+      }
+    </script>
+  </body>
+</html>

@@ -18,8 +18,8 @@
         display: flex;
 
         justify-content: space-between;
-        background-image: url("sky.svg");
-        background-size: contain;
+        background-image: url("clouds-bg.svg");
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: top;
         flex: 1;
@@ -29,15 +29,17 @@
       }
 
       .footer {
-        background-image: url("grass.svg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: top center;
-        flex: 0.2;
+        background-image: url(grass.svg);
+        background-position: bottom;
+        flex: 1;
         width: 100%;
         z-index: 2;
         position: relative;
-        margin-top: -10px; /* Adjust overlap */
+        /* margin-top: -150px; */
+        z-index: 100000000;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        background-size: contain;
       }
       .img-css {
         padding: 1rem 1rem;
@@ -52,10 +54,12 @@
         <img class="img-css" src="iconone.svg" alt="icon" />
       </div>
       <div>
-        <img class="img-css" src="Layer_x0020_1.svg" alt="icon" />
-        <img class="img-css" src="stories.svg" alt="icon" />
-        <img class="img-css" src="Layer_x0020_1 (1).svg" alt="icon" />
-        <img class="img-css" src="Layer_x0020_1 (2).svg" alt="icon" />
+        <a href="/navbar.html">
+          <img class="img-css" src="Layer_x0020_1.svg" alt="icon" />
+          <img class="img-css" src="stories.svg" alt="icon" />
+          <img class="img-css" src="Layer_x0020_1 (1).svg" alt="icon" />
+          <img class="img-css" src="Layer_x0020_1 (2).svg" alt="icon" />
+        </a>
       </div>
       <div>
         <img class="img-css" src="Group 1000008250.svg" alt="icon" />

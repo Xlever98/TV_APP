@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Genos"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings Sidebar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Genos;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+
+      .img {
+        display: flex;
+
+        justify-content: space-between;
+        background-image: url("clouds-bg.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        flex: 1;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+      }
+
+      .img-mobile {
+        display: flex;
+
+        justify-content: space-between;
+        background-image: url("clouds-bg.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+        flex: 1;
+        width: 100%;
+        z-index: 1;
+        position: relative;
+      }
+      .footer {
+        background-image: url(grass.svg);
+        background-position: bottom;
+        flex: 1;
+        width: 100%;
+        z-index: 2;
+        position: relative;
+        /* margin-top: -150px; */
+        z-index: 100000000;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .img-css {
+        padding: 1rem 1rem;
+        width: 8rem;
+      }
+
+      .videoContainer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: #67657157;
+        border-radius: 20px;
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+
+      .main {
+        width: 100%;
+        position: absolute;
+        z-index: 1000000;
+        margin-top: 120px;
+        height: calc(100% - 200px);
+        padding: 20px;
+        overflow: scroll;
+      }
+
+      .newStories {
+        font-family: Genos;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 38.4px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+
+      .videos {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(250px, 1fr)
+        ); /* Dynamic columns */
+        gap: 20px;
+        padding: 20px;
+        width: 100%;
+      }
+
+      .videoCard {
+        aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
+        display: flex;
+        background-image: url("video1.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .videoCardSection1 {
+        flex: 1;
+        display: flex;
+        margin-top: 10px;
+      }
+
+      .videoCardSection2 {
+        padding-top: 10px;
+        display: flex;
+        flex: 2;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        padding-bottom: 20px;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 1) 100%
+        );
+      }
+
+      .videoheading {
+        color: #fff;
+        font-family: Oswald;
+        /* font-size: 35px; */
+        font-size: 24px;
+        /* line-height: 51.87px; */
+        font-weight: 700;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+
+      .videodesc {
+        color: #fff;
+        font-family: Oswald;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+
+      .tag {
+        color: #fff;
+        background: #21202040;
+        border-radius: 4px;
+        padding: 3px 10px;
+        font-size: 14px;
+        font-family: Genos;
+        font-weight: 600;
+        /* line-height: 19.2px; */
+        text-align: right;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        margin-inline: 5px;
+        position: relative;
+        max-height: 25px;
+      }
+
+      .eyeopen {
+        height: 15px;
+        width: 15px;
+        top: 5px;
+        position: absolute;
+      }
+
+      .count {
+        padding-left: 20px;
+      }
+
+      /* old */
+      .video-container {
+        position: relative;
+        cursor: pointer;
+        border-radius: 10px;
+        overflow: hidden;
+        aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+        background: #000;
+      }
+
+      .video-container3 {
+        position: relative;
+        cursor: pointer;
+        border-radius: 15px;
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+        /* width: 600px; */
+        /* height: 375px; */
+        gap: 0px;
+        transition: transform 0.3s ease;
+      }
+
+      .video-container3 video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Makes the video cover the container while maintaining its aspect ratio */
+        border-radius: 15px; /* Ensures the video matches the container's rounded corners */
+      }
+      .video-container2 {
+        position: relative;
+        cursor: pointer;
+        /* width: 325px; */
+        /* height: 460px; */
+        gap: 0px;
+        border-radius: 15px;
+        overflow: hidden;
+        aspect-ratio: 325 / 460; /* Maintains the 325x460 ratio */
+        transition: transform 0.3s ease;
+      }
+
+      .video-container2 video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Makes the video cover the container while maintaining its aspect ratio */
+        border-radius: 15px; /* Ensures the video matches the container's rounded corners */
+      }
+      .videoCard2 {
+        width: 450px;
+        height: 265px;
+        /* background-attachment: fixed; */
+        /* background: red; */
+        display: flex;
+        background-image: url("video1.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .videoContainer2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* height: 530px; */
+        /* height: 100%; */
+        width: 100%;
+        background-color: #67657157;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      .videoContainer3 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* height: 450px; */
+        /* height: 100%; */
+        /* width: 100%; */
+        background-color: #67657157;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      .video-container video {
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        height: 100%;
+        object-fit: cover; /* Ensure video fills container */
+        transition: transform 0.3s ease;
+      }
+      .video-container:hover video {
+        transform: scale(1.05);
+      }
+      .video-time {
+        position: absolute;
+        bottom: 25px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        padding: 0px 3px 2px 3px;
+        font-size: 14px;
+        border-radius: 5px;
+        font-family: Genos;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: right;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      .play-video-tag {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      .play-video-title {
+        position: absolute;
+        bottom: 25px;
+        left: 10px;
+        font-family: Genos;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 21.6px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+        color: #fff;
+      }
+      .playedvideopart {
+        position: absolute;
+        bottom: 60px;
+        left: 10px;
+        overflow: hidden;
+      }
+      .playVideoheading {
+        color: #fff;
+        font-family: Oswald;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 51.87px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+      .playVideodesc {
+        color: #fff;
+        font-family: Oswald;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 32.6px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+      }
+
+      @media (max-width: 1400px) {
+        /* For screens smaller than 1200px */
+        .videos {
+          grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
+        }
+      }
+
+      @media (max-width: 1100px) {
+        /* For screens smaller than 900px */
+        .videos {
+          grid-template-columns: repeat(2, 1fr); /* 2 cards in a row */
+        }
+      }
+
+      @media (max-width: 768px) {
+        /* For screens smaller than 600px */
+        .videos {
+          grid-template-columns: 1fr; /* 1 card in a row */
+        }
+      }
+
+      /* Mobile Navigation */
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        padding: 10px 20px;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .burger-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .burger-icon div {
+        width: 30px;
+        height: 3px;
+        background: #000;
+        border-radius: 2px;
+      }
+
+      /* Hidden Menu for Mobile */
+      .mobile-menu {
+        display: none;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        background: #fff;
+        border-radius: 8px;
+        /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+        padding: 10px 20px;
+        flex-direction: column;
+        z-index: 1000000;
+      }
+
+      .mobile-menu a {
+        text-decoration: none;
+        color: #000;
+        font-size: 16px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .mobile-menu a:last-child {
+        border-bottom: none;
+      }
+
+      @media (min-width: 768px) {
+        .img-mobile {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main {
+          margin-top: 20px;
+        }
+        .desktop-nav {
+          display: none; /* Hide the desktop nav */
+        }
+
+        .mobile-nav {
+          display: flex; /* Show the mobile nav */
+          right: 0;
+        }
+      }
+      @media (max-width: 425px) {
+        /* For screens smaller than 600px */
+        .videoheading {
+          font-size: 20px;
+        }
+        .videodesc {
+          font-size: 12px;
+        }
+        .watchnow {
+          scale: 0.7;
+        }
+        .tag {
+          margin: 2px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="img-mobile">
+      <div class="mobile-nav">
+        <div class="burger-icon" onclick="toggleMobileMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="/auth-home.html">Home</a>
+          <a href="/auth-stories.html">Stories</a>
+          <a href="/auth-videos.html">Videos</a>
+          <a href="/auth-movies.html">Movies</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="img desktop-nav">
+      <div>
+        <img class="img-css" src="iconone.svg" alt="icon" />
+      </div>
+      <div>
+        <a href="/auth-home.html">
+          <img class="img-css" src="home-nav.svg" alt="Home Icon" />
+        </a>
+        <a href="/auth-stories.html">
+          <img class="img-css" src="stories.svg" alt="Stories Icon" />
+        </a>
+        <a href="/auth-videos.html">
+          <img class="img-css" src="Layer_x0020_1 (1).svg" alt="Videos Icon" />
+        </a>
+        <a href="/auth-movies.html">
+          <img class="img-css" src="movies-nav.svg" alt="Movies Icon" />
+        </a>
+      </div>
+      <div>
+        <img class="img-css" src="Group 1000008250.svg" alt="icon" />
+      </div>
+    </div>
+    <div class="main">
+      <div class="videoContainer">
+        <div class="newStories">New Stories</div>
+        <div class="videos">
+          <div class="videoCard">
+            <div class="videoCardSection1">
+              <span class="tag">
+                <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+                <span class="count">159k</span>
+              </span>
+              <span class="tag">Movies</span>
+            </div>
+            <div class="videoCardSection2">
+              <div>
+                <div class="videoheading">STAR WARS</div>
+                <div class="videodesc">THE RISE OF SKYWALKER</div>
+              </div>
+              <img src="watchnow.svg" role="button" alt="video" />
+            </div>
+          </div>
+          <div class="videoCard">
+            <div class="videoCardSection1">
+              <span class="tag">
+                <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+                <span class="count">159k</span>
+              </span>
+              <span class="tag">Movies</span>
+            </div>
+            <div class="videoCardSection2">
+              <div>
+                <div class="videoheading">STAR WARS</div>
+                <div class="videodesc">THE RISE OF SKYWALKER</div>
+              </div>
+              <img src="watchnow.svg" role="button" alt="video" />
+            </div>
+          </div>
+          <div class="videoCard">
+            <div class="videoCardSection1">
+              <span class="tag">
+                <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+                <span class="count">159k</span>
+              </span>
+              <span class="tag">Movies</span>
+            </div>
+            <div class="videoCardSection2">
+              <div>
+                <div class="videoheading">STAR WARS</div>
+                <div class="videodesc">THE RISE OF SKYWALKER</div>
+              </div>
+              <img src="watchnow.svg" role="button" alt="video" />
+            </div>
+          </div>
+          <div class="videoCard">
+            <div class="videoCardSection1">
+              <span class="tag">
+                <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+                <span class="count">159k</span>
+              </span>
+              <span class="tag">Movies</span>
+            </div>
+            <div class="videoCardSection2">
+              <div>
+                <div class="videoheading">STAR WARS</div>
+                <div class="videodesc">THE RISE OF SKYWALKER</div>
+              </div>
+              <img src="watchnow.svg" role="button" alt="video" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="videoContainer2">
+        <div class="newStories">Latest Movies</div>
+        <div class="videos">
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/movie.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/movie.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+        </div>
+      </div>
+      <div class="videoContainer2">
+        <div class="newStories">Our Series</div>
+        <div class="videos">
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img class="playedvideopart" src="playedvideopart.svg" alt="" />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/movie.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+          <div class="video-container2" onclick="redirectToPage('video1.html')">
+            <video
+              src="https://www.w3schools.com/html/movie.mp4"
+              muted
+              onmouseover="this.play()"
+              onmouseout="this.pause(); this.currentTime = 0;"
+            ></video>
+            <span class="tag play-video-tag">
+              <img class="eyeopen absolute" src="eye-open.svg" alt="" />
+              <span class="count">159k</span>
+            </span>
+            <img
+              style="width: 95%"
+              class="playedvideopart"
+              src="playedvideopart.svg"
+              alt=""
+            />
+            <div class="play-video-title">STAR WARS</div>
+            <div class="video-time">3:00</div>
+          </div>
+        </div>
+      </div>
+      <script>
+        function redirectToPage(url) {
+          window.location.href = url;
+        }
+      </script>
+    </div>
+    <div class="footer"></div>
+  </body>
+</html>

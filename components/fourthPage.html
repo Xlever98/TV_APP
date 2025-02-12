@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Genos, Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      flex-direction: column;
+      background-color: black;
+    }
+    .header {
+      width: 100%;
+      height: 250px;
+      background: url("/images/bg.svg") no-repeat center center/cover;
+      display: flex;
+      justify-content: space-between;
+    }
+    .header-section {
+      margin: 0px;
+    }
+
+    .buttonss {
+      display: flex;
+    }
+
+    .buttonss .icon-img {
+      border: none;
+      padding: 5px;
+      width: 4rem;
+      height: 4rem;
+      cursor: pointer;
+    }
+    .search-bar {
+      border-radius: 4rem;
+      padding: 7px;
+      width: 90%;
+      border: 1px solid white;
+      background-color: #f2f2f2;
+      margin-right: 9px;
+      font-size: 22px;
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+    }
+    .icon {
+      height: 40px;
+      width: 40px;
+    }
+    .main-content {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 250px;
+      margin: 15px;
+      height: 100vh;
+      overflow-y: auto; /* Allows scrolling */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      border-radius: 1rem;
+
+      /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* Internet Explorer and Edge */
+    }
+
+    .sidebar::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+    .sidebar img {
+      width: 230px;
+    }
+    .container {
+      background-color: #67657157;
+      border-radius: 14px;
+      display: flex;
+      flex-direction: row;
+      width: 45%;
+      margin: 5px;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+      margin: 5px;
+    }
+    .content img {
+      margin: 4px;
+    }
+    .song-container {
+      background-color: #00000066;
+      border-radius: 5px;
+      width: 60%;
+      margin: 9px;
+    }
+    .playlist-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .play-list {
+      display: flex;
+      flex-direction: row;
+      margin: 11px;
+      height: 40%;
+    }
+    .play-text {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 7px;
+    }
+    .line {
+      height: 2px;
+      width: 15%;
+      color: #67657157;
+    }
+  </style>
+  <body>
+    <div class="header">
+      <div class="buttonss">
+        <img class="icon-img" src="/images/navbar1.svg" alt="Dark Mode" />
+
+        <img class="icon-img" src="/images/navbar2.svg" alt="Dark Mode" />
+        <img class="icon-img" src="/images/navbarj3.svg" alt="Settings" />
+        <img class="icon-img" src="/images/navbar4.svg" alt="Settings" />
+      </div>
+
+      <div class="search">
+        <input class="search-bar" type="text" placeholder="Search" />
+        <img class="icon" src="/Group 1000008465.svg" alt="Light Mode" />
+      </div>
+      <div class="buttonss">
+        <img class="icon-img" src="/images/navbar6.svg" alt="Settings" />
+        <img class="icon-img" src="/images/navbar7.svg" alt="Settings" />
+        <img class="icon-img" src="/images/navbar8.svg" alt="Settings" />
+        <img class="icon-img" src="/images/navbar9.svg" alt="Settings" />
+        <img class="icon-img" src="/images/navbar10.svg" alt="Settings" />
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="sidebar">
+        <div class="first">
+          <img src="/images/Group 1000008406.png" alt="" />
+        </div>
+        <div class="first">
+          <img src="/images/Group 1000008422.png" alt="" />
+        </div>
+        <div class="first">
+          <img src="/images/Group 1000008421.png" alt="" />
+        </div>
+        <div class="first">
+          <img src="/images/Group 1000008423.png" alt="" />
+        </div>
+      </div>
+      <div class="container">
+        <div class="content">
+          <img src="/images/Group 1000008666.png" alt="content" />
+          <img src="/images/Group 1000008667.png" alt="content" />
+          <img src="/images/Group 1000008668.png" alt="content" />
+          <img src="/images/Group 1000008669.png" alt="content" />
+          <img src="/images/Group 1000008670.png" alt="content" />
+        </div>
+        <div class="song-container">
+          <div class="playlist-container">
+            <div class="play-list">
+              <img src="/images/image 1070.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Song List <br />Sivan Perwer</p>
+              </div>
+            </div>
+            <hr class="line" />
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+            <div class="play-list">
+              <img src="/images/image 1078.png" alt="play" />
+              <div class="play-text">
+                <p style="color: white">Playlist Title <br />Songs 120</p>
+                <p style="color: white">3:52</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
